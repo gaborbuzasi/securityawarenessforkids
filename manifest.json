@@ -1,0 +1,11 @@
+{
+    "name": "Security Awareness for Kids",
+    "version": "1.0",
+    "description": "Highlight potentially dangerous websites",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": ["storage"],
+    "manifest_version": 2
+  }
