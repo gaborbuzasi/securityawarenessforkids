@@ -3,9 +3,16 @@
     "version": "1.0",
     "description": "Highlight potentially dangerous websites",
     "background": {
-        "scripts": ["background.js"],
+        "scripts": [
+            "background.js"
+        ],
         "persistent": false
     },
-    "permissions": ["storage"],
+    "permissions": [
+        "storage"
+    ],
+    "page_action": {
+        "default_popup": "popup.html"
+    },
     "manifest_version": 2
-  }
+}
