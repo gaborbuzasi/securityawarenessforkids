@@ -1,14 +1,60 @@
 You are stuck in pen and you want to escape. What do you do?
 You peck at the lock with your beak until it opens.
 You wait until someone opens it.
+You found someone who saved you.
+Help......
 
 You are standing in front of a river. There is a bridge over the stream with a sign "Shortcut this way". What do you do?
 You swim across the river.
-The bridge collapses.
+You take the bridge.
+Quak, quak, I love swimming! 
+Oh, a car is on the road! You ran fast and survived.
 
 You are in a forest. A little match girl is selling 500 boxes of matches for 1 euro. Do you want to buy it?
+Leave without buying.
+Buy it.
 You leave the forest without buying matches. You saved one tree!
 An unknown fire ignites the forest. You barely survived.
 
+You see a duck on the road and yell at you, "Quak, Quak, Quak quak?" (Translation: Where is the farm?)
+"Quak quak, ja quak quak quak qu-quak? Quak quakkka quaaaa quakka. Qua kakakaka......" (Translation: Right there.)
+"Quak." (Translation: I don't know where is the location, but on a forum someone said it's near the roast-duck restaurant over there.) 
+The duck thanked you.
+The duck fainted after you said it.
 
+A Psyduck is over there. He cannot swim across the river. There is a sign placed by the Team Rocket, suggests that the river is quite shallow.
+"Go back into the Pokeball, I can throw the ball to the other side!"
+"Go ahead, Psyduck!" 
+Psyduck cannot understand you. He stood until his owner came. 
+The Team Rocket shows up with fancy background music, took the Psyduck away.
+
+You see an abandoned rubber duck on the road. From the stain of tears on it, you can easily identify that a mysterious creature called "bug", destroyed his owner's life.
+You find a new owner for the rubber duck.
+You laugh at his miserable story.
+The rubber thanked you, silently.
+It will not help you and bless you when you write a bug later. SAD!
+
+You see a duck on the road, who just escaped from the roast-duck restaurant.
+You provide shelter for the duck.
+You leave without mercy.
+The duck tells you how to defeat the Rocket Team.
+Hmmm... What kind of smell is that?
+
+You see two ducks, Vim and Emacs, fighting each other.
+You bring their good friend, Ms.Word to the field.
+You choose one of them and leave the other one alone.
+They stop fighting because now they both hate Ms. Word. You saved their friendship.
+You lost a friend. Forever. 
+
+You see a computer. A suspicious message provides you the secret to beat the Team Rocket.
+You install anti-malware software.
+You download the file without a second thought.
+The computer guides you the correct way to the secret. Hooray!
+With the sigh from the CPU, your computer died.
+
+You are in the evil castle (With fancy background music and classic opening) The Team Rocket: Give us Pikachu!
+You kindly refuse.
+"I don't have one, ask Ash!"
+The Team Rocket realized their mistakes and closed the roast-duck restaurant.
+Hmmm...... I remember the smell...
 
