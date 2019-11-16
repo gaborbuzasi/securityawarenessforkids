@@ -6,6 +6,8 @@ public class ThirdPersonCamera : MonoBehaviour
 {
     public Transform target;
     public float damping = 1.0f;
+    public float maxCamDistance = 30.0f;
+
 
     private Vector3 offset;
 
