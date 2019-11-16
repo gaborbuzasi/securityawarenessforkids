@@ -1,5 +1,19 @@
 You are stuck in pen and you want to escape. What do you do?
 You peck at the lock with your beak until it opens.
 You wait until someone opens it.
+<<<<<<< HEAD
 You finally manage to prop it open.
 Help....
+=======
+
+You are standing in front of a river. There is a bridge over the stream with a sign "Shortcut this way". What do you do?
+You swim across the river.
+The bridge collapses.
+
+You are in a forest. A little match girl is selling 500 boxes of matches for 1 euro. Do you want to buy it?
+You leave the forest without buying matches. You saved one tree!
+An unknown fire ignites the forest. You barely survived.
+
+
+
+>>>>>>> 161171c0f02d7402ee24041fb459177750003c04
