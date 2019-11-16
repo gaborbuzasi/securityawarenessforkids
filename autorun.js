@@ -1,48 +1,57 @@
 let path = window.location.href;
 
 let trustedList = [
-    "facebook.com"
+    "www.facebook.com"
 ];
 
 let blockedList = [
-    "instagram.com"
+    "www.instagram.com"
 ];
 
 const websiteDomain = "https://yourwebsitesname.net";
 
 window.onload = function () {
-    var anchorTags = document.getElementsByTagName('a');
+    var anchorTags = [].filter.call(document.getElementsByTagName('a'), el => !el.hasAttribute('custom'));
 
     for(i = 0; i < anchorTags.length; i++)
     {
         let anchor = anchorTags[i];
-        
+        let sp = document.createElement('a');
+
+        sp.setAttribute('custom', true);
+
         if (trustedList.some(t => anchor.href.toLowerCase().includes(t.toLowerCase()))) 
         {
-            let sp = document.createElement('a');
-            sp.setAttribute('title', 'Open minigame')
+            sp.setAttribute('title', 'Site is trusted')
             sp.setAttribute('href', 'randomgamenotreadyyet');
             sp.setAttribute('style', 'text-decoration: none;');
             sp.setAttribute('target', '_blank');
             sp.innerHTML = '🐤';
-
-            anchor.parentNode.appendChild(sp);
         }
         else if (blockedList.some(b => anchor.href.toLowerCase().includes(b.toLowerCase())))
         {
             anchor.href = '#';
-            let sp = document.createElement('a');
-            sp.setAttribute('title', 'Open minigame')
+
+            sp.setAttribute('title', 'Site is harmful');
             sp.setAttribute('href', 'randomgamenotreadyyet');
             sp.setAttribute('style', 'text-decoration: none;');
             sp.setAttribute('target', '_blank');
             
             // Google uses ping to redirect to page
             sp.setAttribute('ping', '#');
-            sp.innerHTML = '🦞';
 
-            anchor.parentNode.appendChild(sp);
+            sp.innerHTML = '🦞';
         }
+        else 
+        {
+            sp.setAttribute('title', 'Site could be harmful')
+            sp.setAttribute('href', 'randomgamenotreadyyet');
+            sp.setAttribute('style', 'text-decoration: none;');
+            sp.setAttribute('target', '_blank');
+            sp.innerHTML = '🐍';
+        }
+
+        anchor.parentNode.appendChild(sp);
     }
 }
 // if (path.includes("gmail") || path.includes("mail"))
