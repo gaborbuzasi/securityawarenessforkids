@@ -16,4 +16,5 @@ public enum InteractType
 public class Interactable : MonoBehaviour
 {
     public InteractType type;
+    public string questionFileName;
 }

@@ -7,6 +7,8 @@ public class Duck : MonoBehaviour
     public float speed = 1.0f;
     public float jumpHeight = 1.0f;
     public float turnSpeed = 100.0f;
+    public InteractController ictrl;
+
 
     private Animator anim;
     private Rigidbody rbody;
@@ -56,8 +58,10 @@ public class Duck : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Eat!");
             anim.SetTrigger("Interact");
+            Interactable tile = other.GetComponent<Interactable>();
+            if (tile)
+                ictrl.Handle(tile);
         }
     }
 }
