@@ -12,12 +12,20 @@ public class Duck : MonoBehaviour
 
     private Animator anim;
     private Rigidbody rbody;
+    private bool open;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         rbody = GetComponent<Rigidbody>();
+        open = false;
+    }
+
+    private void FixedUpdate()
+    {
+        rbody.velocity = Vector3.zero;
+        rbody.angularVelocity = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -58,10 +66,19 @@ public class Duck : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            anim.SetTrigger("Interact");
-            Interactable tile = other.GetComponent<Interactable>();
-            if (tile)
-                ictrl.Handle(tile);
+            if (!open)
+            {
+                anim.SetTrigger("Interact");
+                Interactable tile = other.GetComponent<Interactable>();
+                if (tile)
+                    ictrl.Handle(tile);
+                open = true;
+            }
+            else
+            {
+                ictrl.Close();
+                open = false;
+            }
         }
     }
 }

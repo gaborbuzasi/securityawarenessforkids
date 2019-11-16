@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.IO;
 using UnityEngine;
 
@@ -7,23 +8,47 @@ public class InteractController : MonoBehaviour
 {
     public QuestionPanelController canvasControl;
 
+    private string[] texts;
+    private Interactable interactable;
 
     public void Handle(Interactable tile)
     {
-        string[] texts = File.ReadAllLines($"Assets/Dialogues/{tile.questionFileName}.txt");
+        interactable = tile;
+        texts = File.ReadAllLines($"Assets/Dialogues/{tile.questionFileName}.txt");
+        canvasControl.StartQuestion(texts);
+        
+    }
 
-        foreach (string s in texts)
-        {
-            Debug.Log(s);
-        }
+    public void DisplayBadResponse()
+    {
+        canvasControl.DisableButtons();
+        canvasControl.SetTitle(texts[4]);
+        HandleResult(false);
+    }
 
-        switch (tile.type)
+    public void DisplayCorrectResponse()
+    {
+        canvasControl.DisableButtons();
+        canvasControl.SetTitle(texts[3]);
+        HandleResult(true);
+    }
+
+    public void Close()
+    {
+        canvasControl.Disable();
+    }
+
+    private void HandleResult(bool result)
+    {
+        switch (interactable.type)
         {
             case InteractType.Start:
-                canvasControl.Toggle();
+                if (result)
+                {
+                    interactable.transform.GetChild(0).transform.position += Vector3.down * 3;
+                }
                 break;
             case InteractType.Road:
-                Debug.Log("Road");
                 break;
             case InteractType.EvilCastle:
                 break;
