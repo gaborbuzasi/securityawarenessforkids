@@ -13,8 +13,8 @@ if(window.location.toString().includes("google")){
     });
 }
 */
-
 /*
+
 let path = window.location.href;
 
 let trustedList = [
@@ -67,12 +67,15 @@ window.onload = function () {
             sp.setAttribute('href', 'randomgamenotreadyyet');
             sp.setAttribute('style', 'text-decoration: none;');
             sp.setAttribute('target', '_blank');
-            sp.innerHTML = '🐍';
+            //sp.innerHTML = '🐍';
+
+            sp.innerHTML = '🦞';
         }
 
         anchor.parentNode.appendChild(sp);
     }
 }
+
 // if (path.includes("gmail") || path.includes("mail"))
 // {
 //     window.open(websiteDomain + '?d=gmail', '_blank');
