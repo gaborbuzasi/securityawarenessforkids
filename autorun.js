@@ -1,3 +1,20 @@
+/*
+if(window.location.toString().includes("google")){
+    // update the logo
+    chrome.runtime.sendMessage({
+        action: 'updateIcon',
+        value: true
+    });
+}else{
+    // update the logo
+    chrome.runtime.sendMessage({
+        action: 'updateIcon',
+        value: false
+    });
+}
+*/
+
+/*
 let path = window.location.href;
 
 let trustedList = [
@@ -11,6 +28,8 @@ let blockedList = [
 const websiteDomain = "https://yourwebsitesname.net";
 
 window.onload = function () {
+    
+
     var anchorTags = [].filter.call(document.getElementsByTagName('a'), el => !el.hasAttribute('custom'));
 
     for(i = 0; i < anchorTags.length; i++)
@@ -62,3 +81,5 @@ window.onload = function () {
 // {
 //     window.open(websiteDomain + '?d=facebook', '_blank');
 // }
+
+*/
