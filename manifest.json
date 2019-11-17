@@ -1,15 +1,16 @@
 {
     "name": "Security Awareness for Kids",
     "version": "1.0",
+    "background": {
+        "scripts": ["background.js"]
+    },
     "description": "Highlight potentially dangerous websites",
     "browser_action": {
-        "default_icon": "images/get_started128.png"
+        "default_icon": "images/duck128g.png"
     },
     "content_scripts": [
         {
-            "matches": [
-                "<all_urls>"
-            ],
+            "matches": ["<all_urls>"],
             "js": [
                 "autorun.js"
             ]
@@ -18,25 +19,11 @@
     "permissions": [
         "storage",
         "declarativeContent",
-        "activeTab"
+        "activeTab",
+        "tabs"
     ],
     "icons": {
-        "128": "images/get_started128.png"
+        "128": "images/duck128.png"
     },
-    "manifest_version": 2,
-    "chrome_settings_overrides": {
-        "search_provider": {
-            "name": "Safe Kids",
-            "keyword": "keyword.Safe Kids",
-            "search_url": "https://www.kiddle.co/s.php?q={searchTerms}",
-            "favicon_url": "https://www.kiddle.co/favicon.ico",
-            "image_url": "https://www.kiddle.co/i.php?q={searchTerms}",
-            "search_url_post_params": "search_lang=Safe Kids",
-            "suggest_url_post_params": "suggest_lang=Safe Kids",
-            "instant_url_post_params": "instant_lang=Safe Kids",
-            "image_url_post_params": "image_lang=Safe Kids",
-            "encoding": "UTF-8",
-            "is_default": true
-        }
-    }
+    "manifest_version": 2
 }
