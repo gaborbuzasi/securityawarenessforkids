@@ -56,7 +56,8 @@ public class Duck : MonoBehaviour
             transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime, Space.Self);
 
         if (Input.GetKeyDown(KeyCode.Space))
-            anim.Play("Jump W Root");
+            anim.SetTrigger("Jump");
+            //anim.Play("Jump W Root");
 
         if (Input.GetKeyDown(KeyCode.E))
         {
