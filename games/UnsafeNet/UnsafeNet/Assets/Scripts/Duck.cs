@@ -9,10 +9,13 @@ public class Duck : MonoBehaviour
     public float turnSpeed = 100.0f;
     public InteractController ictrl;
 
+    public int keyCount = 0;
+    public int health = 3;
 
     private Animator anim;
     private Rigidbody rbody;
     private bool open;
+    private Interactable currentTile;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +23,6 @@ public class Duck : MonoBehaviour
         anim = GetComponent<Animator>();
         rbody = GetComponent<Rigidbody>();
         open = false;
-    }
-
-    private void FixedUpdate()
-    {
-        rbody.velocity = Vector3.zero;
-        rbody.angularVelocity = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -58,20 +55,17 @@ public class Duck : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime, Space.Self);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
             anim.Play("Jump W Root");
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            anim.SetTrigger("Interact");
+
             if (!open)
             {
-                anim.SetTrigger("Interact");
-                Interactable tile = other.GetComponent<Interactable>();
-                if (tile)
-                    ictrl.Handle(tile);
+                if (currentTile && currentTile.type != InteractType.Bridge && !currentTile.finished)
+                    ictrl.Handle(currentTile);
                 open = true;
             }
             else
@@ -80,5 +74,18 @@ public class Duck : MonoBehaviour
                 open = false;
             }
         }
+
+    }
+
+    public void Open()
+    {
+        open = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Interactable tile = collision.collider.GetComponent<Interactable>();
+        if (tile)
+            currentTile = tile;
     }
 }

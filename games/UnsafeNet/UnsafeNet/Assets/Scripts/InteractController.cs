@@ -7,6 +7,7 @@ using UnityEngine;
 public class InteractController : MonoBehaviour
 {
     public QuestionPanelController canvasControl;
+    public Duck duck;
 
     private string[] texts;
     private Interactable interactable;
@@ -16,7 +17,13 @@ public class InteractController : MonoBehaviour
         interactable = tile;
         texts = File.ReadAllLines($"Assets/Dialogues/{tile.questionFileName}.txt");
         canvasControl.StartQuestion(texts);
-        
+    }
+
+    public void Handle(string title)
+    {
+        canvasControl.Enable();
+        canvasControl.SetTitle(title);
+        canvasControl.DisableButtons();
     }
 
     public void DisplayBadResponse()
@@ -44,11 +51,13 @@ public class InteractController : MonoBehaviour
         {
             case InteractType.Start:
                 if (result)
-                {
                     interactable.transform.GetChild(0).transform.position += Vector3.down * 3;
-                }
                 break;
             case InteractType.Road:
+                if (result)
+                    duck.keyCount++;
+                break;
+            case InteractType.Bridge:
                 break;
             case InteractType.EvilCastle:
                 break;
@@ -58,10 +67,19 @@ public class InteractController : MonoBehaviour
                 break;
             case InteractType.Farm:
                 break;
+            case InteractType.Forest:
+                if (result)
+                    duck.keyCount++;
+                break;
             case InteractType.CandyLand:
                 break;
             default:
                 break;
         }
+
+        if (result)
+            interactable.finished = true;
+        else
+            duck.health--;
     }
 }
